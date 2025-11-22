@@ -3,7 +3,7 @@ from PIL import Image
 
 
 # read an image
-IMG_FILE = './data/mri_prostate.dat'
+IMG_FILE = 'tutorials/image_filtering/data/mri_prostate.dat'
 img0 = np.genfromtxt(IMG_FILE,delimiter=',',dtype='uint8')
 M, N = img0.shape
 
@@ -23,4 +23,4 @@ img1 = np.abs(img1) # real part
 
 # save to files
 img1 = (img1-img1.min()) / (img1.max()-img1.min()) *255 # to uint8
-Image.fromarray(img1.astype('uint8')).save('fft_s1e-2.png')
+Image.fromarray(img1.astype('uint8')).save('tutorials/image_filtering/fft_s1e-2.png')
